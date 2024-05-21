@@ -54,4 +54,18 @@ export const bannerData = [
     id: 4,
     url: "https://rukminim1.flixcart.com/flap/3376/560/image/f6202f13b6f89b03.jpg?q=50",
   },
+  {
+    id: 5,
+    url: "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/c7d5963c1f077d41.jpg?q=20",
+  },
+  {
+    id: 6,
+    url: "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/943fc7a0812f3209.jpg?q=20",
+  },
+];
+
+export const imageURL = [
+  "https://rukminim1.flixcart.com/flap/960/960/image/2f30db9425df5cec.jpg?q=50",
+  "https://rukminim1.flixcart.com/flap/960/960/image/084789479074d2b2.jpg",
+  "https://rukminim1.flixcart.com/flap/960/960/image/1ce0c4c1fb501b45.jpg?q=50",
 ];

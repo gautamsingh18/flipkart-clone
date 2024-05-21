@@ -1,21 +1,24 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import { navData } from "../../constants/data";
 
 const Navbar = () => {
+  const Wrapper = styled(Box)(({ theme }) => ({
+    display: "flex",
+    marginRight: "10px",
+    marginLeft: "10px",
+    borderRadius: 1,
+    justifyContent: "space-between",
+    bgcolor: "white",
+    overflow: "overlay",
+    [theme.breakpoints.down("lg")]: {
+      margin: 0,
+    },
+  }));
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          marginRight: "10px",
-          marginLeft: "10px",
-          borderRadius: 1,
-          justifyContent: "space-between",
-          bgcolor: "white",
-        }}
-      >
+      <Wrapper>
         {navData.map((data, index) => (
-          <Box key={index} padding={"20px"} textAlign={"center"}>
+          <Box item key={index} padding={"20px"} textAlign={"center"}>
             <div>
               <img src={data.url} style={{ width: "64px" }} />
               <Typography
@@ -30,7 +33,7 @@ const Navbar = () => {
             </div>
           </Box>
         ))}
-      </Box>
+      </Wrapper>
     </>
   );
 };

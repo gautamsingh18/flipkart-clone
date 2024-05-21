@@ -1,4 +1,5 @@
-import { AppBar, Toolbar, Box, Typography } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography, Link } from "@mui/material";
+
 import Search from "./Search";
 import CustomButtons from "./CustomButtons";
 
@@ -16,21 +17,32 @@ const Header = () => {
             height: "54px",
           }}
         >
-          <Box sx={{ marginLeft: "12%", lineHeight: "0" }}>
-            <img src={logoURL} alt="" style={{ width: "75px" }} />
-            <Box style={{ display: "flex" }}>
-              <Typography sx={{ fontSize: "10px", fontStyle: "italic" }}>
-                explore&nbsp;
-                <Box component={"span"} sx={{ color: "yellow" }}>
-                  Plus
-                </Box>
-              </Typography>
-              <img
-                src={subURL}
-                style={{ width: "10px", height: "10px", marginLeft: "5%" }}
-              />
+          <Link
+            href="/"
+            sx={{
+              marginLeft: "12%",
+              lineHeight: "0",
+              marginTop: "3px",
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <Box>
+              <img src={logoURL} alt="" style={{ width: "75px" }} />
+              <Box style={{ display: "flex" }}>
+                <Typography sx={{ fontSize: "10px", fontStyle: "italic" }}>
+                  explore&nbsp;
+                  <Box component={"span"} sx={{ color: "yellow" }}>
+                    Plus
+                  </Box>
+                </Typography>
+                <img
+                  src={subURL}
+                  style={{ width: "10px", height: "10px", marginLeft: "5%" }}
+                />
+              </Box>
             </Box>
-          </Box>
+          </Link>
 
           <Search />
           <CustomButtons />

@@ -1,20 +1,14 @@
-import dotenv from "dotenv";
+import mongoose from "mongoose";
 
-const { default: mongoose } = require("mongoose");
-dotenv.config();
+const connectToMongo = async (username, password) => {
+  const connectionUri = `mongodb+srv://gautam18:gautam18@ecom.7vwnmdf.mongodb.net/?retryWrites=true&w=majority&appName=ecom`;
 
-const connectionUri = `mongodb+srv://<${process.env.USERNAME}>:<${process.env.PASSWORD}>@ecom.7vwnmdf.mongodb.net/?retryWrites=true&w=majority&appName=ecom`;
-
-const connectToMongo = async((connectionUri) => {
   try {
-    mongoose.connect(connectionUri, {
-      useUnifiedTopologu: true,
-      useNewUrlParser: true,
-    });
+    await mongoose.connect(connectionUri, {});
     console.log("connected to mongo");
   } catch (e) {
     console.log(e.message);
   }
-});
+};
 
-module.exports = connectToMongo;
+export default connectToMongo;
