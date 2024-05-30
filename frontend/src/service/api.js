@@ -1,19 +1,36 @@
 import axios from "axios";
+
 const url = "http://localhost:3000";
 
-export const authenticateSignup = async (data) => {
+export const authenticateLogin = async (user) => {
   try {
-    return await axios.post(`${url}/signup`, data); // send a post request to the server
+    return await axios.post(`${url}/login`, user);
   } catch (error) {
-    console.log(error);
+    console.log("Error while calling login API: ", error);
   }
 };
 
-export const authenticateLogin = async (data) => {
+export const authenticateSignup = async (user) => {
   try {
-    return await axios.post(`${url}/login`, data);
+    return await axios.post(`${url}/signup`, user);
   } catch (error) {
-    console.log(error);
-    return error.response;
+    console.log("Error while calling Signup API: ", error);
+  }
+};
+
+export const getProductById = async (id) => {
+  try {
+    return await axios.get(`${url}/products/${id}`);
+  } catch (error) {
+    console.log("Error while getting product by id response", error);
+  }
+};
+
+export const payUsingPaytm = async (data) => {
+  try {
+    let response = await axios.post(`${url}/payment`, data);
+    return response.data;
+  } catch (error) {
+    console.log("Error", error);
   }
 };

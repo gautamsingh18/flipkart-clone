@@ -132,7 +132,7 @@ const LoginDialog = ({ isOpen, setOpen }) => {
                 variant="standard"
                 label="Enter Password"
                 name="password"
-                margin="normal"
+                sx={{ margin: "20px" }}
                 onChange={(e) => loginInputChange(e)}
               />
               {alertStatus && (

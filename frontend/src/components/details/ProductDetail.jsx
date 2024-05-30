@@ -1,11 +1,19 @@
 /* eslint-disable react/prop-types */
-import { Typography, Box } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@mui/material";
 const fassured =
   "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png";
 
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 
 const ProductDetail = ({ product }) => {
+  const date = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000);
   return (
     <>
       <Typography>{product.title.longTitle}</Typography>
@@ -20,7 +28,7 @@ const ProductDetail = ({ product }) => {
         </Box>
       </Typography>
       <Typography>
-        <Box component="span" style={{ fontSize: "22px", marginLeft: "10px" }}>
+        <Box component="span" style={{ fontSize: "22px" }}>
           ₹{product.price.cost}
         </Box>
         <Box component="span" style={{ color: "#878787", marginLeft: "10px" }}>
@@ -79,6 +87,61 @@ const ProductDetail = ({ product }) => {
           FreebieFlat ₹1000 off on Cleartrip hotels booking along with 300
           supercoins on bookingT&C
         </Typography>
+        <Table>
+          <TableBody>
+            <TableRow
+              sx={{
+                fontSize: "14px",
+                verticalAlign: "baseline",
+              }}
+            >
+              <TableCell sx={{ color: "#878787", border: "none" }}>
+                Delivery
+              </TableCell>
+              <TableCell sx={{ fontWeight: "600", border: "none" }}>
+                Delivery by {date.toDateString()}{" "}
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ fontSize: "14px", verticalAlign: "baseline" }}>
+              <TableCell sx={{ color: "#878787", border: "none" }}>
+                Warranty
+              </TableCell>
+              <TableCell sx={{ fontWeight: "600", border: "none" }}>
+                No Warranty
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ fontSize: "14px", verticalAlign: "baseline" }}>
+              <TableCell sx={{ color: "#878787", border: "none" }}>
+                Seller
+              </TableCell>
+              <TableCell sx={{ border: "none" }}>
+                <Box component="span" sx={{ color: "#2874f0" }}>
+                  SuperComNet
+                </Box>
+                <Typography sx={{ fontSize: "10px" }}>
+                  GST invoice available
+                </Typography>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ fontSize: "14px", verticalAlign: "baseline" }}>
+              <TableCell colSpan={2} sx={{ border: "none" }}>
+                <img
+                  src="https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50"
+                  alt=""
+                  style={{ width: "30%" }}
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ fontSize: "14px", verticalAlign: "baseline" }}>
+              <TableCell sx={{ color: "#878787", border: "none" }}>
+                Description
+              </TableCell>
+              <TableCell sx={{ border: "none" }}>
+                {product.description}
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </Box>
     </>
   );

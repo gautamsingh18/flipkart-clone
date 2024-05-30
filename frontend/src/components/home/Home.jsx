@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Box sx={{ paddingTop: "10px", background: "#e4e8e3", width: "100%" }}>
+      <Box sx={{ paddingTop: "10px", width: "100%" }}>
         <Banner />
         <MidSlide products={products} title={"Deals of the day"} timer={true} />
         <MidSection />

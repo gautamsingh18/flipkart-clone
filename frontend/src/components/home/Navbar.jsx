@@ -10,6 +10,7 @@ const Navbar = () => {
     justifyContent: "space-between",
     bgcolor: "white",
     overflow: "overlay",
+    background: "#fff",
     [theme.breakpoints.down("lg")]: {
       margin: 0,
     },
