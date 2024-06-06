@@ -6,7 +6,9 @@ export const cartReducer = (
 ) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
+      // eslint-disable-next-line no-case-declarations
       const item = action.payload;
+      // eslint-disable-next-line no-case-declarations
       const isItemExist = state.cartItems.find(
         (i) => i.product === item.product
       );

@@ -3,7 +3,9 @@ import axios from "axios";
 
 export const addToCart = (id, quantity) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.get(`http://localhost:3000/products/${id}`);
+    const { data } = await axios.get(
+      `https://flipkart-clone-api.onrender.com/products/${id}`
+    );
     dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data, quantity } });
     localStorage.setItem(
       "cartItems",
